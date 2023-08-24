@@ -1,2 +1,2 @@
 # githubactionsdemo
-this is sample git repo for actions test
+this is sample git repo for action
