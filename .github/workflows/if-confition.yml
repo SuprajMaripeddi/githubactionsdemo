@@ -1,9 +1,7 @@
 name: If Condition and Script Block Example
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch
 
 jobs:
   example_job:
