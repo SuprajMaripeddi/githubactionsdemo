@@ -11,12 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Display branch name
-        run: echo "Current branch: ${{ github.ref }}"
+      # - name: Display branch name
+      #   run: echo "Current branch: ${{ github.ref }}"
         
-      - name: Conditional step
-        if: github.ref == 'refs/heads/main'
-        run: echo "This step runs only on the 'main' branch"
+      # - name: Conditional step
+      #   if: github.ref == 'refs/heads/main'
+      #   run: echo "This step runs only on the 'main' branch"
         
       - name: Script block example
         run: |
