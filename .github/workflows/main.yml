@@ -14,7 +14,7 @@ on:
       lists:
         description: 'An example list variable (comma-separated)'
         required: true
-        default: 'item1,item2,item3'
+        default: 'item1,item2,item3,item4'
 
 jobs:
   example_job:
