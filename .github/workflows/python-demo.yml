@@ -16,4 +16,3 @@ jobs:
       - name: Run Python script
         run: |
           python my_script.py
- 	
