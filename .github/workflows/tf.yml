@@ -1,0 +1,32 @@
+name: Terraform Deployment
+
+on:
+  push:
+    branches:
+      - demobranch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 0.14.7  # Replace with your desired Terraform version
+        
+      - name: Initialize Terraform
+        run: terraform init
+        
+      - name: Validate Terraform configuration
+        run: terraform validate
+        
+      - name: Deploy using Terraform
+        run: terraform apply -auto-approve
+        
+      - name: Clean up
+        run: terraform destroy -auto-approve
+        if: always()  # This step will always run to clean up resources, even if the previous steps fail
