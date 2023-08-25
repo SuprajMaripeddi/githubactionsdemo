@@ -1,0 +1,19 @@
+name: Python Script Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Run Python script
+        run: |
+          python my_script.py
+ 	
