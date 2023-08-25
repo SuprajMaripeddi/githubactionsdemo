@@ -7,7 +7,7 @@ on:
         description: 'An example string variable'
         required: true
         default: 'Hello, World!'
-      bucketreiogion:
+      bucketregion:
         description: 'An example string variable'
         required: true
         default: 'Hello, World!'
