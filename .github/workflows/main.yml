@@ -5,8 +5,8 @@ on:
     inputs:
       bucketname:
         description: 'An example string variable'
-        required: true
-        default: 'Hello, World!'
+        required: false
+        default: ''
       bucketregion:
         description: 'An example string variable'
         required: true
