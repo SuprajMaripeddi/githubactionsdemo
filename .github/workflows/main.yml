@@ -1,0 +1,31 @@
+name: Workflow Dispatch Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      example_string:
+        description: 'An example string variable'
+        required: true
+        default: 'Hello, World!'
+      example_list:
+        description: 'An example list variable (comma-separated)'
+        required: true
+        default: 'item1,item2,item3'
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Display inputs
+        run: |
+          echo "Example String: ${{ github.event.inputs.example_string }}"
+          
+          IFS=',' read -ra LIST_ITEMS <<< "${{ github.event.inputs.example_list }}"
+          echo "Example List:"
+          for item in "${LIST_ITEMS[@]}"; do
+            echo "- $item"
+          done
