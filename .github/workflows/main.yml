@@ -3,11 +3,15 @@ name: Workflow Dispatch Example
 on:
   workflow_dispatch:
     inputs:
-      example_string:
+      bucketname:
         description: 'An example string variable'
         required: true
         default: 'Hello, World!'
-      example_list:
+      bucketreiogion:
+        description: 'An example string variable'
+        required: true
+        default: 'Hello, World!'
+      lists:
         description: 'An example list variable (comma-separated)'
         required: true
         default: 'item1,item2,item3'
@@ -22,9 +26,9 @@ jobs:
         
       - name: Display inputs
         run: |
-          echo "Example String: ${{ github.event.inputs.example_string }}"
+          echo "creating bucket name with this: ${{ github.event.inputs.bucketname }} in the region  ${{ github.event.inputs.bucketregion }}"
           
-          IFS=',' read -ra LIST_ITEMS <<< "${{ github.event.inputs.example_list }}"
+          IFS=',' read -ra LIST_ITEMS <<< "${{ github.event.inputs.lists }}"
           echo "Example List:"
           for item in "${LIST_ITEMS[@]}"; do
             echo "- $item"
