@@ -1,0 +1,29 @@
+name: Multi-Job Workflow
+on: [push]
+jobs:
+  buildnpm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: |
+          echo "npm build"
+          echo "ipaddr a"
+          echo "hostname"
+          echo "Building the npm project..."
+          # Add your build commands here
+
+  testnpm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          echo "ipaddr a"
+          echo "hostname"
+          # Add your test commands here
