@@ -39,7 +39,7 @@ on:
 env:
   DAY_OF_WEEK: Monday
   # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+  env_var: ${{ vars.ENVVAR }}
 jobs:
   greeting_job:
     environment: dev
@@ -48,7 +48,7 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name, $ENVVAR is var name,Today is $DAY_OF_WEEK!"
+        run: echo "$Greeting $First_Name, $env_var is var name,Today is $DAY_OF_WEEK!"
         env:
           First_Name: Mona
 
