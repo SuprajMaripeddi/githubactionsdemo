@@ -34,7 +34,16 @@
 name: Greeting on variable day
 
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        description: env values
+        options: 
+        - dev
+        - prod
+      message:
+        required: true
 
 env:
   DAY_OF_WEEK: Monday
@@ -42,7 +51,7 @@ env:
   env_var: ${{ vars.ENVVAR }}
 jobs:
   greeting_job:
-    environment: dev
+    environment: ${{ github.event.inputs.env }}
     runs-on: ubuntu-latest
     env:
       Greeting: Hello
