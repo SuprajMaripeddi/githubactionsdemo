@@ -1,32 +1,52 @@
-name: Multi-Job Workflow
+# name: Multi-Job Workflow
 
-on: 
-  push
+# on: 
+#   push
   
+# jobs:
+#   buildnpm:
+#     runs-on: myrunner
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Build project
+#         run: |
+#           echo "npm build"
+#           ipaddr a
+#           hostname"
+#           echo "Building the npm project..."
+#           # Add your build commands here
+
+#   testnpm:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Run tests
+#         run: |
+#           echo "Running tests..."
+#           ipaddr a
+#           hostname
+#           # Add your test commands here
+
+name: Greeting on variable day
+
+on:
+  push
+
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
-  buildnpm:
-    runs-on: myrunner
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Build project
-        run: |
-          echo "npm build"
-          ipaddr a
-          hostname"
-          echo "Building the npm project..."
-          # Add your build commands here
-
-  testnpm:
+  greeting_job:
     runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
 
-      - name: Run tests
-        run: |
-          echo "Running tests..."
-          ipaddr a
-          hostname
-          # Add your test commands here
