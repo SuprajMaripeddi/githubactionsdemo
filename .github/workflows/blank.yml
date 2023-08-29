@@ -42,6 +42,7 @@ on:
         options: 
         - dev
         - prod
+        - demo
 
 env:
   DAY_OF_WEEK: Monday
