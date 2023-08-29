@@ -51,10 +51,14 @@ env:
 jobs:
   greeting_job:
     environment: ${{ github.event.inputs.env }}
-    runs-on: ubuntu-latest
+    runs-on: myrunner
     env:
       Greeting: Hello
     steps:
+      - name: awscliinstall
+        run: |
+              aws --version
+              aws s3 ls
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name, $env_var is var name,Today is $DAY_OF_WEEK!"
         env:
