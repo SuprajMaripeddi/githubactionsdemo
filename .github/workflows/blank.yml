@@ -42,8 +42,6 @@ on:
         options: 
         - dev
         - prod
-      message:
-        required: true
 
 env:
   DAY_OF_WEEK: Monday
