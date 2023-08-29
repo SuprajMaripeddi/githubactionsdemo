@@ -1,5 +1,6 @@
 name: Multi-Job Workflow
-on: [push]
+on: 
+  push
 jobs:
   buildnpm:
     runs-on: ubuntu-latest
